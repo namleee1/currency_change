@@ -7,14 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1iGmqSxYIqzQQsq8HSvbbOaduYURhmeTP
 """
 
-import numpy as np
-import pandas as pd
-from matplotlib import pyplot as plt
-import seaborn as sn
-import requests
-from bs4 import BeautifulSoup
-import json
-import os
 #Bieu dien cac sheet trong file excel
 file_path = "C:/csv/Data system POC_11Nov2024(mod).xlsx"
 df = pd.read_excel(file_path, sheet_name="Data- refinitiv")
@@ -74,11 +66,6 @@ elif name=='OMOrate' :
    print(df_ref['Date'].iloc[:n],df_ref['OMOrate'].iloc[:n], sep='\n') # Change here: Use df_ref to access the column
 elif name=='SBVcentralrate' :
    print(df_ref['Date'].iloc[:n],df_ref['SBVcentralrate'].iloc[:n], sep='\n') # Change here: Use df_ref to access the column
-
-import pandas as pd
-import numpy as np
-from statsmodels.tsa.statespace.sarimax import SARIMAX
-import matplotlib.pyplot as plt
 
 def train_sarima(df_ref, n):
 
@@ -153,14 +140,6 @@ plt.title("Biểu đồ giá VND - Lịch sử vs Dự báo vs Thực tế")
 plt.legend()
 plt.grid(True)
 plt.show()
-
-import smtplib
-import pandas as pd
-import numpy as np
-import os  # Dùng để lấy biến môi trường
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from datetime import datetime, timedelta
 
 # 🔹 Nhập email người nhận
 EMAIL_RECEIVER = input('Mời bạn nhập vào email người nhận: ')
